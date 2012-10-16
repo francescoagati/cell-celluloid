@@ -1,18 +1,3 @@
-cell-celluloid
-==============
-
-An example for integrate stand-alone cells inside celluloid actor.
-
-
-```
-rvm use 1.9.3
-bundle install
-bundle exec ruby main.rb
-```
-
-
-```
-
 require 'action_pack'
 require 'cell/base'
 require "cell/rails/helper_api"
@@ -55,6 +40,3 @@ pool = Actor.pool(size:50)
 #we do 100 rendering of cell Render sending 100 message to Actor and get the results of future
 list_time=(0..100).to_a.map { |n| pool.future(:get_time) }.map {|actor| actor.value }
 p list_time
-
-
-```
